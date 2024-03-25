@@ -19,7 +19,7 @@ const InputWithIcon = React.forwardRef(
           }}
         />
         {icon && (
-          <div className="absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none text-sm text-gray-200">
+          <div className="absolute inset-y-0 left-0  flex items-center px-2 pointer-events-none text-sm text-gray-200">
             {icon}
           </div>
         )}
