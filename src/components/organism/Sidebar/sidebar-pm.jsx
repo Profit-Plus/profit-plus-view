@@ -51,7 +51,7 @@ export default function SidebarPM() {
   return (
     <>
       <div
-        className={` w-[100px] bg-white relative h-fit p-6 flex flex-col justify-center items-center gap-8 hover:w-[276px] hover:justify-start hover:items-start transition-all duration-100`}
+        className={` w-[100px] bg-white relative h-fit p-6 flex flex-col justify-center items-center gap-8 hover:w-[276px] hover:justify-start hover:items-start ease-out duration-700`}
         onMouseEnter={() => setSidebarHovered(true)}
         onMouseLeave={() => setSidebarHovered(false)}
       >
