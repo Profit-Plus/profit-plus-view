@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import SidebarPM from "@/components/organism/Sidebar/sidebar-pm";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +12,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
