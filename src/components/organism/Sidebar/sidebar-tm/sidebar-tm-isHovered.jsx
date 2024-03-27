@@ -14,12 +14,12 @@ import {
   PieChart,
   Search,
 } from "lucide-react";
-import { Button } from "../../ui/button";
-import { Badge } from "../../ui/badge";
+import { Button } from "../../../ui/button";
+import { Badge } from "../../../ui/badge";
 
 import { InputWithIcon } from "@/components/atoms/InputWithIcon";
 
-export default function SidebarTM() {
+export default function SidebarTMIsHovered() {
   const [isSidebarHovered, setSidebarHovered] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
 
