@@ -51,14 +51,16 @@ export default function SidebarPM() {
   return (
     <>
       <div
-        className={` w-[100px] bg-white relative h-fit p-6 flex flex-col justify-center items-center gap-8 hover:w-[276px] hover:justify-start hover:items-start ease-out duration-700`}
+        className={` w-[100px] bg-white relative h-fit p-6 flex flex-col justify-center items-center gap-8 hover:w-[276px] hover:justify-start hover:items-start ease-out ${
+          isSidebarHovered ? "duration-700" : "duration-0"
+        }`}
         onMouseEnter={() => setSidebarHovered(true)}
         onMouseLeave={() => setSidebarHovered(false)}
       >
         {isSidebarHovered ? (
           <div className="w-full flex justify-start items-start ">
             <Image
-              src={Logo1}
+              src="/images/logo1.png"
               width={128}
               height={41}
               alt="logo profit+"
@@ -68,7 +70,7 @@ export default function SidebarPM() {
         ) : (
           <div className="w-full flex justify-center items-center ">
             <Image
-              src={Logo2}
+              src="/images/logo2.png"
               width={31}
               height={41}
               alt="logo profit+"
@@ -103,7 +105,7 @@ export default function SidebarPM() {
 
         {/* Menu */}
         {/* <div className={`${isFixed ? "fixed top-0 left-0 z-50" : ""}`}> */}
-        <div>
+        <div className="">
           <p
             className={`${
               isSidebarHovered ? "" : "text-center"
@@ -112,7 +114,7 @@ export default function SidebarPM() {
             Menu
           </p>
           <div
-            className={`mb-32 w-full flex flex-col  gap-4 ${
+            className={` w-full flex flex-col  gap-4 ${
               isSidebarHovered
                 ? "justify-start items-start"
                 : "justify-center items-center"
@@ -190,7 +192,7 @@ export default function SidebarPM() {
             <div className="w-[219px] bg-white flex justify-center items-center gap-2">
               <div className="rounded-full">
                 <Image
-                  src={Avatar}
+                  src="/icons/Avatar.png"
                   width={32}
                   height={32}
                   alt="Avatar"
@@ -207,9 +209,16 @@ export default function SidebarPM() {
             </div>
           </>
         ) : (
-          <div className="rounded-full">
-            <Image src={Avatar} width={32} height={32} alt="Avatar" priority />
-          </div>
+          ""
+          // <div className="rounded-full">
+          //   <Image
+          //     src="/icons/Avatar.png"
+          //     width={32}
+          //     height={32}
+          //     alt="Avatar"
+          //     priority
+          //   />
+          // </div>
         )}
       </div>
     </>
