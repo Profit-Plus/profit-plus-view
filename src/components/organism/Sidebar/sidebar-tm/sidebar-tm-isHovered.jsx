@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Logo2 from "../../../../public/images/logo2.png";
-import Logo1 from "../../../../public/images/logo1.png";
-import Avatar from "../../../../public/icons/Avatar.png";
+import Logo2 from "../../../../../public/images/logo2.png";
+import Logo1 from "../../../../..//public/images/logo1.png";
+import Avatar from "../../../../../public/icons/Avatar.png";
 import {
   ArrowLeftToLine,
   Bell,
@@ -51,7 +51,9 @@ export default function SidebarTMIsHovered() {
   return (
     <>
       <div
-        className={` w-[100px] bg-white relative h-fit p-6 flex flex-col justify-center items-center gap-8 hover:w-[276px] hover:justify-start hover:items-start ease-out duration-700`}
+       className={` w-[100px] bg-white relative h-fit p-6 flex flex-col justify-center items-center gap-8 hover:w-[276px] hover:justify-start hover:items-start ease-out ${
+        isSidebarHovered ? "duration-700" : "duration-0"
+      }`}
         onMouseEnter={() => setSidebarHovered(true)}
         onMouseLeave={() => setSidebarHovered(false)}
       >
