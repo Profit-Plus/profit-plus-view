@@ -1,9 +1,9 @@
 import React from 'react'
 
-const TOL = () => {
+const jalanTol = () => {
   return (
-    <div>TOL</div>
+    <div>jalanTol</div>
   )
 }
 
-export default TOL
+export default jalanTol
