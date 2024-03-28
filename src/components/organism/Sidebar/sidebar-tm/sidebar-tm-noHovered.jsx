@@ -23,7 +23,7 @@ export default function SidebarTMNoHovered() {
   const sidebarTitle = (
     <div className="flex gap-1">
       <p className="text-[#64748B] ">Profit+ </p>
-      <p className="text-black"> / Tariff Management</p>
+      <p className="text-black"> / Master Calculator</p>
     </div>
   );
 

@@ -7,7 +7,9 @@ const MainLayout = ({ children }) => {
       <SidebarPM />
       {/* </div> */}
 
-      <div className="bg-gray-200 h-[900px] w-full">{children}</div>
+      <div className="bg-gray-200 justify-center items-center h-[900px] p-8 w-full box-border">
+        {children}
+      </div>
     </div>
   );
 };

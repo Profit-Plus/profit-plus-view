@@ -1,10 +1,6 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Logo2 from "../../../../../public/images/logo2.png";
-import Logo1 from "../../../../..//public/images/logo1.png";
-import Avatar from "../../../../../public/icons/Avatar.png";
 import {
   ArrowLeftToLine,
   Bell,
@@ -19,15 +15,16 @@ import { Badge } from "../../../ui/badge";
 
 import { InputWithIcon } from "@/components/atoms/InputWithIcon";
 
-export default function SidebarTMIsHovered() {
+export default function SidebarPM() {
   const [isSidebarHovered, setSidebarHovered] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (e) => {
       const scrollPosition = window.scrollY;
       if (scrollPosition > 0) {
         setIsFixed(true);
+        e.target.name 
       } else {
         setIsFixed(false);
       }
@@ -41,26 +38,26 @@ export default function SidebarTMIsHovered() {
   }, []);
 
   const sidebarTitle = isSidebarHovered ? (
-    <div className="flex gap-1">
+    <div className="flex opacity-100 duration-700  w-64 gap-1">
       <p className="text-[#64748B] ">Profit+ </p>
-      <p className="text-black"> / Tariff Management</p>
+      <p name="titleRole" className="text-black"> / Master Calculator </p>
     </div>
   ) : (
-    "/PM"
+    "/MC"      
   );
   return (
     <>
       <div
-       className={` w-[100px] bg-white relative h-fit p-6 flex flex-col justify-center items-center gap-8 hover:w-[276px] hover:justify-start hover:items-start ease-out ${
-        isSidebarHovered ? "duration-700" : "duration-0"
-      }`}
+        className={` w-[100px] z-20 bg-red-500 relative min-h-screen p-6 flex flex-col  items-center gap-8 hover:w-[276px] hover:justify-start hover:items-start ease-out ${
+          isSidebarHovered ? "duration-700" : "duration-700"
+        }`}
         onMouseEnter={() => setSidebarHovered(true)}
         onMouseLeave={() => setSidebarHovered(false)}
       >
         {isSidebarHovered ? (
-          <div className="w-full flex justify-start items-start ">
+          <div className="w-full flex justify-start items-start duration-300 ">
             <Image
-              src={Logo1}
+              src="/images/logo1.png"
               width={128}
               height={41}
               alt="logo profit+"
@@ -68,9 +65,9 @@ export default function SidebarTMIsHovered() {
             />
           </div>
         ) : (
-          <div className="w-full flex justify-center items-center ">
+          <div className="w-full flex justify-center  ">
             <Image
-              src={Logo2}
+              src="/images/logo2.png"
               width={31}
               height={41}
               alt="logo profit+"
@@ -105,16 +102,16 @@ export default function SidebarTMIsHovered() {
 
         {/* Menu */}
         {/* <div className={`${isFixed ? "fixed top-0 left-0 z-50" : ""}`}> */}
-        <div>
+        <div className="">
           <p
             className={`${
-              isSidebarHovered ? "" : "text-center"
+              isSidebarHovered ? " duration-300 transition-all" : "text-center"
             } font-medium  text-[#525252] mb-6`}
           >
             Menu
           </p>
           <div
-            className={`mb-32 w-full flex flex-col  gap-4 ${
+            className={` w-full flex flex-col  gap-4 ${
               isSidebarHovered
                 ? "justify-start items-start"
                 : "justify-center items-center"
@@ -192,7 +189,7 @@ export default function SidebarTMIsHovered() {
             <div className="w-[219px] bg-white flex justify-center items-center gap-2">
               <div className="rounded-full">
                 <Image
-                  src={Avatar}
+                  src="/icons/Avatar.png"
                   width={32}
                   height={32}
                   alt="Avatar"
@@ -209,9 +206,16 @@ export default function SidebarTMIsHovered() {
             </div>
           </>
         ) : (
-          <div className="rounded-full">
-            <Image src={Avatar} width={32} height={32} alt="Avatar" priority />
-          </div>
+          ""
+          // <div className="rounded-full">
+          //   <Image
+          //     src="/icons/Avatar.png"
+          //     width={32}
+          //     height={32}
+          //     alt="Avatar"
+          //     priority
+          //   />
+          // </div>
         )}
       </div>
     </>
